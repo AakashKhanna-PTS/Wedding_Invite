@@ -121,7 +121,7 @@ export default function App() {
 
       {!isUnlocked ? (
         /* --- LOCK SCREEN --- */
-        <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+        <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden select-none">
           <div className="absolute inset-0 z-0">
             <img
               src={invitationData.couple.mainImage}
@@ -139,7 +139,7 @@ export default function App() {
           </div>
 
           <div className="z-10 flex flex-col items-center">
-            <p className="text-[var(--accent)] text-sm tracking-[0.3em] uppercase mb-12 font-medium transition-colors duration-700">
+            <p className="text-[var(--accent)] text-xl tracking-[0.3em] uppercase mb-12 font-medium transition-colors duration-700">
               The Invitation Awaits
             </p>
 
@@ -149,7 +149,7 @@ export default function App() {
               onMouseLeave={stopPress}
               onTouchStart={startPress}
               onTouchEnd={stopPress}
-              className="relative w-32 h-32 flex items-center justify-center cursor-pointer group"
+              className="relative w-32 h-32 flex items-center justify-center cursor-pointer group select-none touch-none"
             >
               <svg
                 className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
@@ -214,7 +214,7 @@ export default function App() {
               </div>
             </div>
 
-            <p className="mt-8 text-xs tracking-widest uppercase opacity-60">
+            <p className="mt-8 text-xl tracking-widest uppercase opacity-60">
               Hold to break the seal
             </p>
           </div>
