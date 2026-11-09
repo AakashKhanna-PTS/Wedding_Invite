@@ -33,7 +33,7 @@ export const invitationData = {
     dateLocation: "06 December 2026 — CHENNAI",
     mainImage: "/images/backgroundImg1.jpeg",
     landscapeImage: "/images/coupleImage3.jpeg",
-    backgroundMusic: "/music/coupleImage2.mp3",
+    backgroundMusic: "/music/wedding2.mpeg",
   },
   story: {
     title: "THE BEGINNING",
