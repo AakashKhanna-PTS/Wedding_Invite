@@ -25,6 +25,12 @@ export const invitationData = {
       accent: "#5b84c4",
     },
   ],
+  venue: {
+    name: "Oaza Banquet - Rooftop",
+    address: "278/2A1A, OMR Rd, Padur, Chennai, Tamil Nadu 603103",
+    mapsUrl:
+      "https://www.google.com/maps?rlz=1C1GCEA_enIN1041IN1041&gs_lcrp=EgZjaHJvbWUqBggAECMYJzIGCAAQIxgnMgYIARBFGDkyEAgCEC4YrwEYxwEYgAQYjgUyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyCQgGEAAYChiABDIGCAcQRRg80gEIMjg4NmowajeoAgiwAgE&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KZl2AmAlUVI6MczO0DYEKZSp&daddr=278/2A1A,+OMR+Rd,+Padur,+Chennai,+Tamil+Nadu+603103",
+  },
   couple: {
     initials: "Raghul & Aruna",
     partner1: "Raghul",

@@ -66,6 +66,13 @@ export default function App() {
   const toggleEventReveal = (id) =>
     setRevealedEvents((prev) => ({ ...prev, [id]: true }));
 
+  // Fallback venue data in case it's not present in invitationData
+  const venue = invitationData.venue || {
+    name: "The Grand Palace Hall",
+    address: "123 Heritage Lane, City Center",
+    mapsUrl: "https://maps.google.com/?q=The+Grand+Palace+Hall",
+  };
+
   return (
     <div
       className="min-h-screen font-sans transition-colors duration-700 selection:bg-[var(--accent)] selection:text-white"
@@ -91,7 +98,9 @@ export default function App() {
       >
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
-          className={`w-10 h-10 rounded-full border flex items-center justify-center hover:scale-110 transition-colors duration-700 ${isScrolled ? "border-[var(--text-color)]" : "border-gray-400"}`}
+          className={`w-10 h-10 rounded-full border flex items-center justify-center hover:scale-110 transition-colors duration-700 ${
+            isScrolled ? "border-[var(--text-color)]" : "border-gray-400"
+          }`}
         >
           {isDarkMode ? "☀️" : "🌙"}
         </button>
@@ -102,7 +111,9 @@ export default function App() {
 
         <button
           onClick={toggleAudio}
-          className={`w-10 h-10 rounded-full border flex items-center justify-center hover:scale-110 transition-colors duration-700 ${isScrolled ? "border-[var(--text-color)]" : "border-gray-400"}`}
+          className={`w-10 h-10 rounded-full border flex items-center justify-center hover:scale-110 transition-colors duration-700 ${
+            isScrolled ? "border-[var(--text-color)]" : "border-gray-400"
+          }`}
         >
           {isPlaying ? "🔊" : "🔇"}
         </button>
@@ -112,7 +123,6 @@ export default function App() {
         /* --- LOCK SCREEN --- */
         <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            {/* Main Image with Low Opacity on Lock Screen */}
             <img
               src={invitationData.couple.mainImage}
               alt="Couple"
@@ -162,13 +172,15 @@ export default function App() {
                   stroke="var(--accent)"
                   strokeWidth="2"
                   strokeDasharray="301.59"
-                  strokeDashoffset={301.59 - (301.59 * holdProgress) / 100}
+                  strokeDashoffset={((100 - holdProgress) * 301.59) / 100}
                   className="transition-all duration-75 ease-linear"
                 />
               </svg>
 
               <div
-                className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 ${isDarkMode ? "bg-white text-black" : "bg-[#1a1a1a] text-white"} ${holdProgress > 0 ? "scale-90" : "scale-100"}`}
+                className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  isDarkMode ? "bg-white text-black" : "bg-[#1a1a1a] text-white"
+                } ${holdProgress > 0 ? "scale-90" : "scale-100"}`}
               >
                 {isBreaking ? (
                   <svg
@@ -221,7 +233,6 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--bg-color)]/60 to-[var(--bg-color)]"></div>
             </div>
 
-            {/* Text Wrapper (flex-1 pushes the scroll indicator down) */}
             <div className="z-10 flex-1 flex flex-col items-center justify-center w-full mt-10">
               <p className="text-[var(--accent)] text-sm tracking-[0.3em] uppercase mb-6 transition-colors duration-700 drop-shadow-md">
                 Together with their families
@@ -241,14 +252,13 @@ export default function App() {
               </div>
             </div>
 
-            {/* Scroll Indicator (mt-auto ensures it never overlaps) */}
             <div className="z-10 mt-auto pt-8 text-[10px] tracking-widest uppercase opacity-60 animate-bounce">
               Scroll
               <div className="w-[1px] h-8 bg-current mx-auto mt-2"></div>
             </div>
           </header>
 
-          {/* Faded Edge Transition Image (Adapts to Portrait or Landscape) */}
+          {/* Faded Edge Transition Image */}
           <section className="w-full mt-10 md:mt-16 relative z-10 flex justify-center">
             <div className="max-w-6xl mx-auto px-4 md:px-6 w-full flex justify-center">
               <div
@@ -300,7 +310,6 @@ export default function App() {
                 Counting Down
               </h2>
 
-              {/* Dynamic Countdown Timer Sub-Component */}
               <CountdownTimer targetDate="2026-12-06T00:00:00" />
             </div>
 
@@ -312,10 +321,14 @@ export default function App() {
                 return (
                   <div
                     key={ev.id}
-                    className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8 md:gap-16`}
+                    className={`flex flex-col ${
+                      isEven ? "md:flex-row" : "md:flex-row-reverse"
+                    } items-center gap-8 md:gap-16`}
                   >
                     <div
-                      className={`flex-1 text-center ${isEven ? "md:text-left" : "md:text-right"}`}
+                      className={`flex-1 text-center ${
+                        isEven ? "md:text-left" : "md:text-right"
+                      }`}
                     >
                       <p className="text-[var(--accent)] text-xs tracking-[0.2em] uppercase mb-3 transition-colors duration-700">
                         {ev.tag}
@@ -333,7 +346,11 @@ export default function App() {
                       <button
                         onClick={() => toggleEventReveal(ev.id)}
                         disabled={isRevealed}
-                        className={`px-8 py-3 border rounded-full text-xs tracking-[0.2em] uppercase transition-all duration-500 ${isRevealed ? "border-transparent text-[var(--accent)] opacity-50 cursor-default" : "border-[var(--text-color)] opacity-70 hover:opacity-100 cursor-pointer"}`}
+                        className={`px-8 py-3 border rounded-full text-xs tracking-[0.2em] uppercase transition-all duration-500 ${
+                          isRevealed
+                            ? "border-transparent text-[var(--accent)] opacity-50 cursor-default"
+                            : "border-[var(--text-color)] opacity-70 hover:opacity-100 cursor-pointer"
+                        }`}
                       >
                         {isRevealed ? "Revealed" : "Unveil The Moment"}
                       </button>
@@ -348,7 +365,9 @@ export default function App() {
                       <img
                         src={ev.image}
                         alt={ev.title}
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${isRevealed ? "blur-0 scale-100" : "blur-xl scale-110"}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
+                          isRevealed ? "blur-0 scale-100" : "blur-xl scale-110"
+                        }`}
                       />
                       {!isRevealed && (
                         <div
@@ -368,6 +387,52 @@ export default function App() {
             </div>
           </section>
 
+          {/* Location / Venue Section */}
+          <section
+            className="max-w-4xl mx-auto px-6 py-20 text-center border-t"
+            style={{ borderColor: "rgba(150,150,150,0.2)" }}
+          >
+            <p className="text-[var(--accent)] text-xs tracking-[0.3em] uppercase mb-4 transition-colors duration-700">
+              The Venue
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl font-light mb-6">
+              Location & Directions
+            </h2>
+            <p className="text-lg opacity-90 font-serif mb-2">{venue.name}</p>
+            <p className="text-sm opacity-70 max-w-md mx-auto mb-8 font-light">
+              {venue.address}
+            </p>
+
+            <a
+              href={venue.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 border border-[var(--text-color)] rounded-full text-xs tracking-[0.2em] uppercase hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:text-white transition-all duration-300"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              Open in Google Maps
+            </a>
+          </section>
+
+          {/* Footer */}
           <footer
             className="py-12 text-center text-xs tracking-[0.2em] uppercase opacity-40 border-t"
             style={{ borderColor: "rgba(150,150,150,0.2)" }}
