@@ -8,7 +8,7 @@ const ACTIVE_THEME_INDEX = 0;
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [holdProgress, setHoldProgress] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [revealedEvents, setRevealedEvents] = useState({});
   const [isBreaking, setIsBreaking] = useState(false);
