@@ -30,9 +30,9 @@ export const invitationData = {
     partner1: "Raghul",
     partner2: "Aruna",
     tagline: "Love found us, and forever followed.",
-    dateLocation: "22 & 23 January 2027 — CHENNAI",
-    mainImage: "/images/coupleMainImg1.jpeg",
-    landscapeImage: "/images/coupleMainImg1.jpeg",
+    dateLocation: "06 December 2026 — CHENNAI",
+    mainImage: "/images/backgroundImg1.jpeg",
+    landscapeImage: "/images/coupleImage3.jpeg",
     backgroundMusic: "/music/coupleImage2.mp3",
   },
   story: {
