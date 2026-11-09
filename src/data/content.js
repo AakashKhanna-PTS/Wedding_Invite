@@ -50,41 +50,41 @@ export const invitationData = {
       "This chapter is a reflection of our journey, and it wouldn't feel complete without the people who have walked besides us. We warmly invite you to celebrate this beautiful beginning with us.",
   },
   events: [
-    {
-      id: "engagement",
-      tag: "THE ENGAGEMENT",
-      title: "The Promise",
-      datetime: "21 August 2026 • 5:00 PM onwards",
-      description:
-        "The exchange of rings and a promise of forever, surrounded by our closest family.",
-      image: "/images/engagement.jpg",
-    },
-    {
-      id: "mehendi",
-      tag: "THE MEHENDI",
-      title: "Colors of Joy",
-      datetime: "22 August 2026 • 10:00 AM onwards",
-      description:
-        "A vibrant morning of henna, music, and laughter to kick off the celebrations.",
-      image: "/images/mehendi.jpg",
-    },
-    {
-      id: "reception",
-      tag: "THE RECEPTION",
-      title: "The Celebration",
-      datetime: "22 August 2026 • 6:30 PM onwards",
-      description:
-        "An evening of warm wishes, easy conversation, and the first toast to what's ahead.",
-      image: "/images/reception.jpg",
-    },
-    {
-      id: "wedding",
-      tag: "THE WEDDING",
-      title: "The Ceremony",
-      datetime: "23 August 2026 • 7:30 AM onwards",
-      description:
-        "The morning our two families become one, held in the presence of everyone we love.",
-      image: "/images/wedding.jpg",
-    },
+    // {
+    //   id: "engagement",
+    //   tag: "THE ENGAGEMENT",
+    //   title: "The Promise",
+    //   datetime: "21 August 2026 • 5:00 PM onwards",
+    //   description:
+    //     "The exchange of rings and a promise of forever, surrounded by our closest family.",
+    //   image: "/images/engagement.jpg",
+    // },
+    // {
+    //   id: "mehendi",
+    //   tag: "THE MEHENDI",
+    //   title: "Colors of Joy",
+    //   datetime: "22 August 2026 • 10:00 AM onwards",
+    //   description:
+    //     "A vibrant morning of henna, music, and laughter to kick off the celebrations.",
+    //   image: "/images/mehendi.jpg",
+    // },
+    // {
+    //   id: "reception",
+    //   tag: "THE RECEPTION",
+    //   title: "The Celebration",
+    //   datetime: "22 August 2026 • 6:30 PM onwards",
+    //   description:
+    //     "An evening of warm wishes, easy conversation, and the first toast to what's ahead.",
+    //   image: "/images/reception.jpg",
+    // },
+    // {
+    //   id: "wedding",
+    //   tag: "THE WEDDING",
+    //   title: "The Ceremony",
+    //   datetime: "23 August 2026 • 7:30 AM onwards",
+    //   description:
+    //     "The morning our two families become one, held in the presence of everyone we love.",
+    //   image: "/images/wedding.jpg",
+    // },
   ],
 };
