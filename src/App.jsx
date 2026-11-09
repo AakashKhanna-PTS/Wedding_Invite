@@ -373,7 +373,7 @@ export default function App() {
             style={{ borderColor: "rgba(150,150,150,0.2)" }}
           >
             {invitationData.couple.partner1} & {invitationData.couple.partner2}{" "}
-            • 2027
+            • 2026
           </footer>
         </div>
       )}
